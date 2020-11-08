@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `il-ilce` (
 --
 
 INSERT INTO `il-ilce` (`id`, `plaka`, `bolge`, `il`, `ilce`) VALUES
-(1, 1, 'AKDENİZ', 'ADANA', 'ALADAĞ'),
+(1, 1, 'AKDENİZ', 'ADANA', 'ALADAG'),
 (2, 1, 'AKDENİZ', 'ADANA', 'CEYHAN'),
 (3, 1, 'AKDENİZ', 'ADANA', 'ÇUKUROVA'),
 (4, 1, 'AKDENİZ', 'ADANA', 'FEKE'),
