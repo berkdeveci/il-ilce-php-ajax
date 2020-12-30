@@ -5,6 +5,8 @@ class db{
     public function __construct(){
         try{
             self::$db = new PDO("mysql:host=localhost;dbname=test;charset=utf8", "root", "");
+            self::$db->exec("SET NAMES utf8");
+            self::$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch (PDOException $exception)
         {
@@ -14,7 +16,7 @@ class db{
 
     public function getIlList(){
         $data=array();
-        $query = self::$db->query("SELECT DISTINCT il from ilveilceler", PDO::FETCH_ASSOC);
+        $query = self::$db->query("SELECT DISTINCT il from ilveilce", PDO::FETCH_ASSOC);
         if($query->rowCount())
         {
             foreach ($query as $row)
@@ -27,7 +29,7 @@ class db{
 
     public function getIlceList($il){
         $data=array();
-        $query = self::$db->prepare("SELECT DISTINCT ilce FROM ilveilceler WHERE il=:il");
+        $query = self::$db->prepare("SELECT DISTINCT ilce FROM ilveilce WHERE il=:il");
         $query->execute(array(":il"=>$il));
         if($query->rowCount())
         {
